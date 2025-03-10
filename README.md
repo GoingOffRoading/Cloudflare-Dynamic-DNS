@@ -19,7 +19,9 @@ Run it with the following variables:
 |     ZONE     |   String    | The Zone of the website
 |     DOMAIN     |   String    | Which Domain is being updated
 
-Kubernetes cronjob example attached as Kub-DNS.yml
+Kubernetes cronjob example attached as [kuberenetes-cronjob-example.yml](https://github.com/GoingOffRoading/Cloudflare-Dynamic-DNS/blob/main/kuberenetes-cronjob-example.yml)
+
+What, no secrets?  Plain text is the way
 
 ## Where to get Cloudflare API Token
 
