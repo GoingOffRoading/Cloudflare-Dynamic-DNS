@@ -1,0 +1,25 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: dnsexample
+spec:
+  schedule: "*/15 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: dnsexample
+            image: ghcr.io/goingoffroading/cloudflare-dynamic-dns:latest
+            imagePullPolicy: IfNotPresent
+            env:
+              - name: TOKEN
+                value: "YOUR TOKEN HERE WITH QUOTES"
+              - name: ZONE
+                value: "YOUR ZONE ID HERE WITH QUOTES"
+              - name: DOMAIN
+                value: "YOUR URL HERE WITH QUOTES"
+          restartPolicy: Never
